@@ -467,5 +467,7 @@ Contributions are welcome! This section will soon be updated with guidelines.
 
 ## 📬 Contato / Contact
 
-Andreas William Porcel <a href="mailto:seu-email@exemplo.com">[seu-email@exemplo.com](mailto:seu-email@exemplo.com)</a>
-[GitHub Profile](https://github.com/And5reas)
+Andreas William Porcel <br>
+[And5reas.porcel@hotmail.com](mailto:And5reas.porcel@hotmail.com)<br>
+[GitHub Profile](https://github.com/And5reas)<br>
+[LinkedIn Profile](https://www.linkedin.com/in/andreas-william-porcel-832607298/)
