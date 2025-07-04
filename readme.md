@@ -1,7 +1,7 @@
-# 🧭 Polos Search
+# 📌 Polos Search
 
-🇧🇷 Aplicação web para localizar polos educacionais com base na cidade pesquisada, mostrar a distância até o centro da cidade e exibir informações detalhadas do polo. É possível adicionar, editar e excluir polos por meio da interface.  
-🇺🇸 Web application to locate educational hubs based on the searched city, show the distance from the city center, and display detailed information about the hub. Users can add, edit, and delete hubs through the interface.
+🇷🇷 Aplicação web para localizar polos educacionais com base na cidade pesquisada. Exibe a distância até o centro urbano e mostra informações detalhadas do polo. Permite adicionar, editar e excluir polos de forma simples pela interface.
+🇺🇸 Web application to locate educational hubs based on the searched city. It shows the distance from the city center and detailed information about each hub. Users can easily add, edit, and delete hubs through the interface.
 
 ---
 
@@ -13,124 +13,132 @@
 
 ## 🚀 Tecnologias / Technologies
 
-- JavaScript, HTML & CSS
-- PostgreSQL
-- Express.js
-- Apache2
-- Bootstrap
-- [Leaflet.js](https://leafletjs.com/)
-- [API do IBGE](https://servicodados.ibge.gov.br/api/docs/) / IBGE API
-- [OpenStreetMap Nominatim API](https://nominatim.org/release-docs/latest/api/Overview/)
+* JavaScript, HTML & CSS
+* PostgreSQL + PostGIS
+* Express.js
+* Apache2
+* Docker & Docker Compose
+* Bootstrap
+* [Leaflet.js](https://leafletjs.com/)
+* [IBGE API](https://servicodados.ibge.gov.br/api/docs/)
+* [OpenStreetMap Nominatim API](https://nominatim.org/release-docs/latest/api/Overview/)
 
 ---
 
 ## ⚙️ Funcionalidades / Features
 
-🇧🇷
-- Buscar polos por cidade
-- Calcular distância do centro urbano
-- Visualizar informações do polo em mapa interativo
-- Adicionar, editar e excluir polos
+### 🇷🇷 Funcionalidades
 
-🇺🇸
-- Search hubs by city
-- Calculate distance from city center
-- Display hub info on interactive map
-- Add, edit, and delete hubs
+* Buscar polos por cidade
+* Calcular distância do centro urbano
+* Exibir polos em mapa interativo
+* Adicionar, editar e excluir polos
+
+### 🇺🇸 Features
+
+* Search hubs by city
+* Calculate distance from city center
+* Display hubs on an interactive map
+* Add, edit, and delete hubs
+
+---
+
+## ✅ Pré-requisitos / Prerequisites
+
+* [Node.js (v18+)](https://nodejs.org/)
+* [PostgreSQL (v13+)](https://www.postgresql.org/) com extensão [PostGIS](https://postgis.net/) habilitada
+* [Docker](https://www.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/)
+* [Apache2](https://httpd.apache.org/)
+* Git
+* SO Linux 🐧 (Ubuntu Server 22.04 LTS recomendado)
 
 ---
 
 ## 📁 Como usar / How to Use
 
-🇧🇷
-### Pesquisando Polos
+### 🔍 Pesquisando Polos / Searching Hubs
+
+🇷🇷
 
 1. Use o campo **"Selecione uma cidade"** para buscar a cidade desejada.
 2. Pressione **Enter** ou clique no botão à esquerda do campo de busca.
-3. Pronto! Os polos serão exibidos no mapa com suas respectivas informações.
-
-### Gerenciando os Polos
-
-1. Acesse a aba **"Gerenciar Polos"** no topo da página.
-2. Você verá uma lista com todos os polos cadastrados.
-3. No canto superior direito, é possível **pesquisar** polos existentes ou adicionar um novo polo.
-4. Cada card de polo possui botões para **editar** ou **excluir** o respectivo polo.
+3. Os polos serão exibidos no mapa com suas respectivas informações.
 
 🇺🇸
-### Searching for Hubs
 
 1. Use the **"Select a city"** field to search for the desired location.
 2. Press **Enter** or click the button to the left of the search field.
-3. Done! The hubs will appear on the map with their respective details.
+3. The hubs will appear on the map with their respective information.
 
-### Managing Hubs
+### 🛠️ Gerenciando Polos / Managing Hubs
 
-1. Navigate to the **"Management"** tab at the top of the page.
-2. A list of all registered hubs will be displayed.
-3. In the top-right corner, you can search for existing hubs or add a new one.
-4. Each hub card includes buttons to **edit** or **delete** that specific hub.
+🇷🇷
 
-## ✅ Pré-requisitos / Prerequisites
+1. Acesse a aba **"Gerenciar Polos"** no topo da página.
+2. Visualize todos os polos cadastrados.
+3. No canto superior direito, é possível buscar ou adicionar novos polos.
+4. Cada card possui botões para **editar** ou **excluir** o polo.
 
-- [Node.js (v18+)](https://nodejs.org/)
-- [PostgreSQL (v13+)](https://www.postgresql.org/) com extensão [PostGIS](https://postgis.net/) habilitada
-- [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
-- [Apache2](https://httpd.apache.org/)
-- Git
-- SO Linux 🐧 (Ubuntu Server 22.04 LTS)
+🇺🇸
 
+1. Navigate to the **"Manage Hubs"** tab at the top of the page.
+2. View all registered hubs.
+3. Use the top-right controls to search or add new hubs.
+4. Each hub card has buttons to **edit** or **delete** the hub.
+
+---
 
 ## 📦 Instalação / Installation
 
-### Configurando o FrontEnd no Apache2
+### 🌐 Frontend (Apache2)
 
 ```bash
-# Clone o repositório / Clone the repository
 git clone https://github.com/And5reas/PolosSearch
 cd PolosSearch
-
-# Mova o frontend / Move the frontend
 mv ./frontend /var/www
+```
 
-# Duplique o arquivo 000-default.conf com o nome de frontend.conf
+Crie um novo virtual host:
+
+```bash
 cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/frontend.conf
-
-# Atualize o conteúdo do arquivo frontend.conf
 nano /etc/apache2/sites-available/frontend.conf
 ```
 
-Modifique o texto abaixo, **preenchendo as informações \<SeuEmail> e \<Domínio>**, após a modificação cole o conteúdo dentro do arquivo **"frontend.conf"**.
+Exemplo de conteúdo (`<SeuEmail>` e `<Domínio>` devem ser ajustados):
 
-```txt
+```apacheconf
 <VirtualHost *:80>
-	ServerAdmin <SeuEmail>
-	DocumentRoot /var/www/frontend
-	ServerName <Domínio> (Se tiver caso não tenha, apenas coloque o IP do servidor)
+  ServerAdmin <SeuEmail>
+  DocumentRoot /var/www/frontend
+  ServerName <Domínio>
 
-	ErrorLog ${APACHE_LOG_DIR}/error.log
-	CustomLog ${APACHE_LOG_DIR}/access.log combined
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
 
-Feita alteração, execute o comando `a2ensite frontend.conf` no seu terminal. Agora já é possível acessar o seu frontend pelo navegador utilizando o endereço de IP do seu servidor ou o domínio, caso tenha configurado. Se por acaso você não conseguir acessar o frontend, tente colocar o arquivo `frontend` dentro de `/var/www/html` e acesse a aplicação pelo endereço `http://<ip-do-seus-servidor>/frontend`.
-
-### Configurando o BackEnd no Docker
+Ative o site:
 
 ```bash
-# Vá para o local onde você clonou o repositório / Go to the repository location
+a2ensite frontend.conf
+systemctl reload apache2
+```
 
-# Entre no diretório / Enter the directory
+Caso não funcione diretamente, mova a pasta `frontend` para `/var/www/html` e acesse via `http://<IP-do-servidor>/frontend`.
+
+---
+
+### 🧹 Backend (Docker)
+
+```bash
 cd PolosSearch/backend
-
-# Instale as dependencias do projeto
 npm install
-
-# Crie um arquivo .env
 touch .env
 ```
 
-Dentro do arquivo `.env`, adicione as seguintes linhas, substituindo o que for necessário. **Lembre-se de que o arquivo `.env` deve estar no diretório do projeto.** Esse arquivo irá fazer a conexão com seu banco de dados.
+Exemplo de `.env`:
 
 ```dotenv
 PGHOST=<ip-do-seu-banco>
@@ -141,9 +149,9 @@ PGPORT=<port>
 PORT=3000
 ```
 
-Já no arquivo `docker-compose.yml`, adicione as seguintes linhas, substituindo o que for necessário
+Exemplo de `docker-compose.yml`:
 
-```docker
+```yaml
 services:
   nodeapi:
     build: .
@@ -152,31 +160,32 @@ services:
       - "3000:3000"
     environment:
       PGHOST: <host>
-      PGUSER: <banco-user>
-      PGPASSWORD: <banco-password>
+      PGUSER: <user>
+      PGPASSWORD: <password>
       PGDATABASE: <database>
       PGPORT: <port>
       PORT: 3000
-    depends_on:
-      - postgres
     volumes:
       - .:/app
     working_dir: /app
     command: sh -c "npm install && node index.js"
-
-volumes:
-  pg_data:
 ```
 
-Termine a configuração executando o seguinte comando para criar seu container no docker.
+Crie e execute o container:
 
 ```bash
-# Apenas execute estes comando para criar seu container
 docker build -t geo-api .
 docker run -it --rm -p 3000:3000 -v $PWD:/app geo-api
 ```
 
-### Banco de dados
+---
+
+### 📃 Banco de Dados
+
+As instruções completas de criação de tabelas, funções e triggers estão disponíveis na seção abaixo. Certifique-se de que o PostGIS está habilitado e o banco de dados `geodados` foi criado.
+
+<details>
+  <summary><strong>📄 SQL completo (clique para expandir)</strong></summary>
 
 ```sql
 CREATE DATABASE geodados;
@@ -436,7 +445,27 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE TRIGGER trigger_backup_before_delete_polo
 BEFORE DELETE ON enderecos
 FOR EACH ROW
-EXECUTE FUNCTION backup_before_delete_polo();
+EXECUTE FUNCTION backup_before_delete_polo();`
 ```
+</details>
 
+---
 
+## 📝 Licença / License
+
+Este projeto está licenciado sob os termos da Licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+
+---
+
+## 🤝 Contribuições / Contributions
+
+Contribuições são bem-vindas! Em breve esta seção será atualizada com instruções específicas.
+
+Contributions are welcome! This section will soon be updated with guidelines.
+
+---
+
+## 📬 Contato / Contact
+
+Andreas William Porcel <a href="mailto:seu-email@exemplo.com">[seu-email@exemplo.com](mailto:seu-email@exemplo.com)</a>
+[GitHub Profile](https://github.com/And5reas)
