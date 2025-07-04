@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  nodeapi:
+    build: .
+    container_name: nodeapi
+    ports:
+      - "3000:3000"
+    environment:
+      PGHOST: <host>
+      PGUSER: <banco-user>
+      PGPASSWORD: <banco-password>
+      PGDATABASE: <database>
+      PGPORT: <port>
+      PORT: 3000
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: sh -c "npm install && node index.js"
+
+volumes:
+  pg_data:

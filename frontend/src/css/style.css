@@ -1,0 +1,36 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex-shrink: 0;
+}
+
+#map {
+    flex-grow: 1;
+}
+
+.leaflet-popup-content {
+    width: fit-content !important;
+}
+
+.col {
+    transition: all .6s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
