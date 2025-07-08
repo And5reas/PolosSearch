@@ -27,7 +27,7 @@
 
 ## ⚙️ Funcionalidades / Features
 
-### 🇷🇷 Funcionalidades
+### **BR** Funcionalidades
 
 * Buscar polos por cidade
 * Calcular distância do centro urbano
@@ -59,7 +59,7 @@
 
 ### 🔍 Pesquisando Polos / Searching Hubs
 
-🇷🇷
+**BR**
 
 1. Use o campo **"Selecione uma cidade"** para buscar a cidade desejada.
 2. Pressione **Enter** ou clique no botão à esquerda do campo de busca.
@@ -73,7 +73,7 @@
 
 ### 🛠️ Gerenciando Polos / Managing Hubs
 
-🇷🇷
+**BR**
 
 1. Acesse a aba **"Gerenciar Polos"** no topo da página.
 2. Visualize todos os polos cadastrados.
