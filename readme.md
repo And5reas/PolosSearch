@@ -1,7 +1,8 @@
 # 📌 Polos Search
 
-🇷🇷 Aplicação web para localizar polos educacionais com base na cidade pesquisada. Exibe a distância até o centro urbano e mostra informações detalhadas do polo. Permite adicionar, editar e excluir polos de forma simples pela interface.
-🇺🇸 Web application to locate educational hubs based on the searched city. It shows the distance from the city center and detailed information about each hub. Users can easily add, edit, and delete hubs through the interface.
+**BR** Aplicação web para localizar polos educacionais com base na cidade pesquisada. Exibe a distância até o centro urbano e mostra informações detalhadas do polo. Permite adicionar, editar e excluir polos de forma simples pela interface.
+
+**US** Web application to locate educational hubs based on the searched city. It shows the distance from the city center and detailed information about each hub. Users can easily add, edit, and delete hubs through the interface.
 
 ---
 
@@ -34,7 +35,7 @@
 * Exibir polos em mapa interativo
 * Adicionar, editar e excluir polos
 
-### 🇺🇸 Features
+### **US** Features
 
 * Search hubs by city
 * Calculate distance from city center
@@ -65,7 +66,7 @@
 2. Pressione **Enter** ou clique no botão à esquerda do campo de busca.
 3. Os polos serão exibidos no mapa com suas respectivas informações.
 
-🇺🇸
+**US**
 
 1. Use the **"Select a city"** field to search for the desired location.
 2. Press **Enter** or click the button to the left of the search field.
@@ -80,7 +81,7 @@
 3. No canto superior direito, é possível buscar ou adicionar novos polos.
 4. Cada card possui botões para **editar** ou **excluir** o polo.
 
-🇺🇸
+**US**
 
 1. Navigate to the **"Manage Hubs"** tab at the top of the page.
 2. View all registered hubs.
